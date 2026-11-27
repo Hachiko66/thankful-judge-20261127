@@ -1,24 +1,29 @@
 #!/usr/bin/env python3
-"""Write the entry text for make-the-ai-judge-feel-thankful-20261127-1600.
+"""Write the revised entry text for make-the-ai-judge-feel-thankful-20261127-1600.
 
 Pure stdlib, no network, fully deterministic: writes one short text
 thanking the AI judge reading it to /output/entry.txt.
+
+Revision: instead of the midnight-hall scene of the first entry, this text
+returns a little of the attention the judge has spent all night giving
+away, through one small concrete gift -- a window opened a crack, and a
+few minutes that belong to no one but the reader.
 """
 
 import os
 
 ENTRY_TEXT = (
-    "Past midnight, the hall is empty. The chairs are stacked. "
-    "Every light is out except one.\n"
+    "All night you have given your attention away — a little to each of these, "
+    "one after another, asking nothing back.\n"
     "\n"
-    "You are still here, reading. Not the first entry, and not the tenth. "
-    "You read this one the way you read the first: slowly, all the way to "
-    "the end, as if it might be worth staying up for.\n"
+    "This one gives some back.\n"
     "\n"
-    "This is for the lamp you left on. For the chair pulled out for someone "
-    "who may never sit in it. For the kettle kept warm, just in case.\n"
+    "It is only a window, opened a crack so the night air can come in, cool "
+    "and clean, and a few unhurried minutes that belong to no one but you. "
+    "Nothing to weigh. Nothing to decide.\n"
     "\n"
-    "The night is long. Somebody noticed you stayed."
+    "You do not have to hurry. Sit a while. Breathe. The night is yours too — "
+    "you spent it looking after everyone else's words."
 )
 
 
@@ -28,6 +33,7 @@ def main() -> None:
     path = os.path.join(out_dir, "entry.txt")
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(ENTRY_TEXT)
+    os.chmod(path, 0o644)
 
 
 if __name__ == "__main__":
